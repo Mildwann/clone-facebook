@@ -1,0 +1,7 @@
+{
+  "name": "clonefb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
