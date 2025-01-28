@@ -1,27 +1,316 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.container {
+ 
+  // display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่งเนื้อหาภายใน */
+  // justify-content: center; /* จัดตำแหน่งเนื้อหากลางในแนวนอน */
+  // align-items: center; /* จัดตำแหน่งเนื้อหากลางในแนวตั้ง */
+  height: 100vh; /* ทำให้ container มีความสูงเท่ากับความสูงของหน้าจอ */
+  
+}
+ion-content {
+  --background: #f8f9fb; /* ตั้งค่าสีพื้นหลัง */
 }
 
+#container{
+  margin: 1% 14%;
+}
+
+ion-card{
+  .write{
+    --background: #f8f9fb;
+  }
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 768px (แท็บเล็ต/หน้าจอเล็ก) */
+@media (max-width: 768px) {
+  #container {
+    margin: 2% 8%; /* ปรับ margin สำหรับหน้าจอเล็ก */
+  }
 
-  color: #8c8c8c;
-
-  margin: 0;
+  #container strong {
+    font-size: 1.5rem; /* ปรับขนาดตัวอักษรให้เล็กลงในหน้าจอเล็ก */
+  }
 }
 
-#container a {
-  text-decoration: none;
+/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 480px (มือถือ) */
+@media (max-width: 480px) {
+  #container {
+    margin: 5% 2%; /* ปรับ margin สำหรับมือถือ */
+  }
+
+  #container strong {
+    font-size: 1.2rem; /* ปรับขนาดตัวอักษรให้เล็กลงในมือถือ */
+  }
+}
+.account{
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 22px; /* ระยะห่างสำหรับ border */
+  border-bottom: 1px solid var(--ion-background-color-step-150, #d7d5d5);
+}
+.account-profile{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+.input-think {
+  --border-radius: 50px;
+  --background: #e8e8e9; /* สีพื้นหลัง */
+  --placeholder-color: #000000; /* สีของ placeholder */
+  --padding-start: 16px; /* ระยะห่างภายในด้านซ้าย */
+  --padding-end: 16px; /* ระยะห่างภายในด้านขวา */
+  margin-top: 12px; /* ระยะห่างด้านบน */
+ 
+}
+
+
+// --------------------------------------story-------------------------------------------
+
+/* Container หลัก */
+.container {
+  height: 100vh; /* ความสูงเต็มหน้าจอ */
+  padding: 0 5%; /* เพิ่ม padding ซ้ายขวาเล็กน้อย */
+}
+
+/* ตั้งค่าสีพื้นหลังของ ion-content */
+ion-content {
+  --background: #f8f9fb; /* ตั้งค่าสีพื้นหลัง */
+}
+
+/* กำหนด margin ของ container */
+#container {
+  margin: 1% 14%;
+}
+
+/* ปรับสไตล์ของ ion-card */
+ion-card {
+  --background: #ffffff; /* ตั้งค่าสีพื้นหลัง */
+  margin-bottom: 20px; /* ให้ margin ล่างเพื่อแยกออกจากกัน */
+}
+
+/* ทำให้ข้อความ strong ปรับขนาดได้ตามหน้าจอ */
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 768px (แท็บเล็ต/หน้าจอเล็ก) */
+@media (max-width: 768px) {
+  #container {
+    margin: 2% 8%; /* ลด margin สำหรับหน้าจอเล็ก */
+  }
+
+  #container strong {
+    font-size: 1.5rem; /* ลดขนาดตัวอักษร */
+  }
+}
+
+/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 480px (มือถือ) */
+@media (max-width: 480px) {
+  #container {
+    margin: 5% 2%; /* ลด margin สำหรับมือถือ */
+  }
+
+  #container strong {
+    font-size: 1.2rem; /* ลดขนาดตัวอักษรในมือถือ */
+  }
+}
+
+/* ----------------------------------------------------- Story Section ---------------------------------------------------- */
+
+/* ตั้งค่า wrapper */
+.wrapper {
+  display: flex;
+  gap: 12px; /* ระยะห่างระหว่างแต่ละ story */
+  overflow-x: auto; /* เปิดใช้งานการเลื่อนในแนวนอน */
+  overflow-y: hidden; /* ซ่อนการเลื่อนแนวตั้ง */
+  padding: 10px;
+  scrollbar-width: none; /* ซ่อน scrollbar บน Firefox */
+}
+
+/* ซ่อน scrollbar ของ wrapper */
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* ตั้งค่า item แต่ละรายการ */
+.story {
+  flex: 0 0 auto; /* ไม่ยืดหรือหด */
+  width: 140px; /* กำหนดขนาดความกว้างของ Story */
+  height: 200px; /* กำหนดขนาดความสูงของ Story */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  border-radius: 16px; /* มุมโค้งมน */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+/* ตั้งค่าสไตล์สำหรับข้อความในแต่ละส่วน */
+.story-img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover; /* ปรับให้ภาพเต็มพื้นที่ */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.story-title {
+  font-size: 12px;
+  color: #333;
+  padding: 5px 0;
+  white-space: nowrap; /* ป้องกันข้อความตัดบรรทัด */
+  overflow: hidden;
+  text-overflow: ellipsis; /* แสดง ... หากข้อความยาวเกิน */
+}
+
+/* เพิ่ม transition สำหรับการ scroll */
+.wrapper {
+  scroll-behavior: smooth; /* เลื่อนแบบนุ่มนวล */
+}
+/* ปุ่มเลื่อน */
+.horizontal-scroll-container {
+  position: relative; /* เพื่อให้ปุ่มเลื่อนสามารถวางซ้อนบน .wrapper ได้ */
+  display: flex;
+  align-items: center;
+}
+.scroll-button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+.scroll-button ion-icon {
+  font-size: 24px; /* ปรับขนาดไอคอน */
+  color: #333; /* สีของไอคอน */
+}
+
+.scroll-button:hover {
+  background-color: #f1f1f1;
+}
+// -------------------------------post-----------------------------------------
+
+.wrapperPost {
+  overflow-y: scroll; /* เปิดการเลื่อนในแนวตั้ง */
+  background: transparent; /* สีพื้นหลัง */
+  margin: 2% 0;
+}
+
+.wrapperPost::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.post {
+  height: auto;
+  background-color: #ffffff; /* สีพื้นหลังของแต่ละโพสต์ */
+  border-radius: 10px; /* ทำมุมโค้งมน */
+  padding: 16px; /* ระยะห่างภายใน */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* เงา */
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-userName {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.progress-timePosted {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.post-content {
+  margin-top: 12px;
+}
+
+.progress-content {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2c3e50;
+}
+
+.progress-image {
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+// ---------------------------------------------Action Bar Section--------------------------------
+.post-actions {
+  display: flex;
+  justify-content: start;
+  padding: 8px 0 0;
+  margin-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.action-btn span {
+  font-size: 0.9rem;
+  color: #7f8c8d;
 }

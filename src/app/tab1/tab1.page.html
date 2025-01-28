@@ -1,17 +1,68 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-split-pane contentId="main-content">
+      <!-- ------------------------------------------1-------------------------------------------- -->
+      <ion-menu contentId="main-content" type="overlay" menuId="main-menu" >
+        <ion-content>
+          <ion-list id="inbox-list">
+            <ion-list-header>Inbox</ion-list-header>
+            <ion-note>hi&#64;ionicframework.com</ion-note>
+  
+            @for (p of appPages; track p; let i = $index) {
+              <ion-menu-toggle auto-hide="false">
+                <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                  <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                  <ion-label>{{ p.title }}</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            }
+          </ion-list>
+  
+          <ion-list id="labels-list">
+            <ion-list-header>Labels</ion-list-header>
+  
+            @for (label of labels; track label) {
+              <ion-item lines="none">
+                <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+                <ion-label>{{ label }}</ion-label>
+              </ion-item>
+            }
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      <!-- -------------------------------------2-------------------------------------------- -->
+      <app-explore-container id="main-content" name="Tab 1 page"></app-explore-container>
+      <!-- -------------------------------------3--------------------------------------------- -->
+      <ion-menu contentId="main-content" type="overlay" menuId="main-menu" class="top-menu"side="end" >
+        <ion-content>
+          <ion-list id="inbox-list">
+            <ion-list-header>Inbox</ion-list-header>
+            <ion-note>hi&#64;ionicframework.com</ion-note>
+  
+            @for (p of appPages; track p; let i = $index) {
+              <ion-menu-toggle auto-hide="false">
+                <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                  <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                  <ion-label>{{ p.title }}</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            }
+          </ion-list>
+  
+          <ion-list id="labels-list">
+            <ion-list-header>Labels</ion-list-header>
+  
+            @for (label of labels; track label) {
+              <ion-item lines="none">
+                <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+                <ion-label>{{ label }}</ion-label>
+              </ion-item>
+            }
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+    </ion-split-pane>
+  
+  
 </ion-content>

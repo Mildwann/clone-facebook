@@ -1,4 +1,64 @@
-<div id="container">
-  <strong>{{ name }}</strong>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="container">
+  <div id="container">
+    <!-- -----------------------------------write------------------------------------------- -->
+    <ion-card class="write" >
+      <ion-card-header>
+        <div class="account">
+          <img src="/assets/cat.jpg" class="account-profile">
+          <ion-input   placeholder="คุณคิดอะไรอยู่ Mild" class="input-think"></ion-input>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+
+<!-- ----------------------------------------Story------------------------------------ -->
+    <div class="horizontal-scroll-container">
+      <!-- ปุ่มเลื่อนไปทางซ้าย -->
+      <button class="scroll-button left" (click)="scrollLeft()"><ion-icon name="chevron-back-outline"></ion-icon></button>
+
+      <!-- ส่วนของ Story -->
+      <div class="wrapper" #scrollContainer>
+        <div class="story" *ngFor="let task of tasks">
+          <img src="{{ task.image }}" alt="Story" class="story-img" />
+          <div class="story-title">{{ task.title }}</div>
+        </div>
+      </div>
+
+      <!-- ปุ่มเลื่อนไปทางขวา -->
+      <button class="scroll-button right" (click)="scrollRight()"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+    </div>
+<!-- -----------------------------------------------------post------------------------------------------- -->
+<div class="wrapperPost">
+  <ion-card class="post" *ngFor="let post of posts">
+    <!-- Header Section -->
+    <div class="post-header">
+      <img [src]="post.userAvatar" alt="User Avatar" class="user-avatar" />
+      <div class="user-info">
+        <div class="progress-userName">{{ post.userName }}</div>
+        <div class="progress-timePosted">{{ post.timePosted }}</div>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="post-content">
+      <p class="progress-content">{{ post.content }}</p>
+      <img *ngIf="post.image" [src]="post.image" alt="Post Image" class="progress-image" />
+    </div>
+       <!-- Action Bar Section -->
+       <div class="post-actions">
+        <button class="action-btn" (click)="likePost(post)">
+          <ion-icon name="heart"></ion-icon> <span>{{ post.likes }}</span>
+        </button>
+        <button class="action-btn" (click)="commentPost(post)">
+          <ion-icon name="chatbubble-outline"></ion-icon> <span>{{ post.comments }}</span>
+        </button>
+        <button class="action-btn" (click)="sharePost(post)">
+          <ion-icon name="share-social-outline"></ion-icon>
+        </button>
+      </div>
+  </ion-card>
 </div>
+  </div>
+</ion-content>
