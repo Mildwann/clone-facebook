@@ -1,1 +1,42 @@
+.facebook-tab-bar {
+    background-color: #ffffff; 
+    border-bottom: 1px solid #e0e0e0; 
+  }
 
+  .facebook-tab-bar ion-tab-button {
+    position: relative; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    color: #888888;
+    transition: color 0.3s ease;
+  }
+
+  .facebook-tab-bar ion-tab-button.ion-activated {
+    color: #1877f2;
+  }
+
+  .facebook-tab-bar ion-tab-button.ion-activated::after {
+    content: ""; 
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 40%; 
+    height: 3px;
+    background-color: #1877f2;
+    border-radius: 2px; 
+  }
+
+  .tab-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px; 
+    transition: transform 0.3s ease;
+  }
+
+  .facebook-tab-bar ion-tab-button:hover .tab-icon {
+    transform: scale(1.1); 
+  }

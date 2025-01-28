@@ -16,7 +16,7 @@ ion-content {
 
 ion-card{
   .write{
-    --background: #f8f9fb;
+    --background: #ffffff;
   }
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -62,7 +62,7 @@ ion-card{
 }
 .input-think {
   --border-radius: 50px;
-  --background: #e8e8e9; /* สีพื้นหลัง */
+  --background: #dddde1; /* สีพื้นหลัง */
   --placeholder-color: #000000; /* สีของ placeholder */
   --padding-start: 16px; /* ระยะห่างภายในด้านซ้าย */
   --padding-end: 16px; /* ระยะห่างภายในด้านขวา */
