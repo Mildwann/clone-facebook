@@ -6,29 +6,29 @@
       <ion-menu contentId="main-content" type="overlay" menuId="main-menu" >
         <ion-content>
           <ion-list id="inbox-list">
-            <ion-list-header>Inbox jaa</ion-list-header>
-            <ion-note>hi&#64;ionicframework.com</ion-note>
-  
-            @for (p of appPages; track p; let i = $index) {
-              <ion-menu-toggle auto-hide="false">
+               <div class="profile-sidemenu">
+                <ion-avatar slot="start">
+                  <img src="/assets/cat.jpg" >
+                </ion-avatar>
+                <ion-label style="font-weight:450;">Mild Wannaporn</ion-label>
+              </div>
+        
+              <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
                 <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-                  <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                  <img slot="start" style="margin-right: 18px;" [src]="p.Image" class="feature-icon" >
                   <ion-label>{{ p.title }}</ion-label>
                 </ion-item>
               </ion-menu-toggle>
-            }
           </ion-list>
   
           <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-  
-            @for (label of labels; track label) {
-              <ion-item lines="none">
-                <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-                <ion-label>{{ label }}</ion-label>
-              </ion-item>
-            }
+            <ion-list-header>ทางลัดของคุณ</ion-list-header>
+            <ion-item lines="none" *ngFor="let label of labels">
+              <img slot="start" [src]="label.Image" class="label-image">
+              <ion-label>{{ label.title }}</ion-label>
+            </ion-item>
           </ion-list>
+          
         </ion-content>
       </ion-menu>
       <!-- -------------------------------------2-------------------------------------------- -->
@@ -38,16 +38,14 @@
         <ion-content>
           <ion-list id="inbox-list">
             <ion-list-header>Inbox</ion-list-header>
-            <ion-note>hi&#64;ionicframework.com</ion-note>
+           
   
-            @for (p of appPages; track p; let i = $index) {
-              <ion-menu-toggle auto-hide="false">
-                <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-                  <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-                  <ion-label>{{ p.title }}</ion-label>
-                </ion-item>
-              </ion-menu-toggle>
-            }
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                <img slot="start" [src]="p.Image"  >
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
           </ion-list>
   
           <ion-list id="labels-list">

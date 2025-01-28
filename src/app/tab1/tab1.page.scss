@@ -1,91 +1,122 @@
-ion-menu ion-content,ion-menu ion-list,ion-menu ion-list ion-item {
-    --background:#f8f9fb;
-    background: #f8f9fb;
+/* ปรับพื้นหลังของ ion-menu และส่วนต่างๆ */
+ion-menu ion-content,
+ion-menu ion-list,
+ion-menu ion-list ion-item {
+  --background: #f8f9fb;
+  background: #f8f9fb;
+}
+
+ion-menu {
+  --border: none;
+  width: 280px; /* ขนาดเมนูด้านซ้าย */
+}
+
+/* สไตล์สำหรับเมนูด้านขวา */
+ion-menu.top-menu {
+  width: 250px; /* ขนาดเมนูด้านขวา */
+  background: #f8f9fb;
+}
+
+@media (min-width: 1000px) {
+  ion-menu {
+    width: 320px; /* เมนูที่เหมาะสมเมื่อหน้าจอกว้าง */
   }
-  ion-menu{
-    --border: none;
-  }
-  @media (min-width: 1000px) {
-    ion-menu{
-    width: 320px;
-  }
-  }
+}
+
+/* สไตล์สำหรับ profile ในเมนู */
+.profile-sidemenu {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ปรับขนาด avatar */
+.profile-sidemenu ion-avatar {
+  width: 34px;  /* ขนาดใหญ่ขึ้นสำหรับ avatar */
+  height: 34px;
+  margin-right: 18px;
+}
+
+/* รูปภาพใน avatar */
+.profile-sidemenu ion-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ปรับขนาดชื่อในโปรไฟล์ */
+.profile-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+ion-item img.feature-icon {
   
-  ion-menu.md ion-content {
-    --padding-start: 8px;
-    --padding-end: 8px;
-    --padding-top: 20px;
-    --padding-bottom: 20px;
-  }
+  width: 34px;
+  height: 34px;
   
-  ion-menu.md ion-list {
-    padding: 20px 0;
-  }
+}
+ion-menu.md ion-list#inbox-list {
+  border-bottom: 1px solid var(--ion-background-color-step-150, #d7d8da);
+}
+ion-item img.label-image{
+  margin-right: 18px;
+}
+/* ปรับ padding ของ ion-item */
+ion-menu.md ion-item {
+  --padding-start: 16px;
+  --padding-end: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* ปรับการเลือกของรายการในเมนู */
+ion-menu.md ion-item.selected {
+  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+}
+
+ion-menu.md ion-item.selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+
+/* ปรับฟอนต์ของ ion-label */
+ion-menu.md ion-item ion-label {
+  font-weight: 500;
+  font-size: 14px;
   
-  ion-menu.md ion-note {
-    margin-bottom: 30px;
-  }
+}
+
+/* ปรับสไตล์สำหรับ labels */
+ion-menu.md ion-list#labels-list ion-list-header {
+  font-size: 16px;
+  font-weight: 600;
+  color: #757575;
+}
+
+ion-menu.md ion-list#labels-list ion-item {
+  font-size: 14px;
+}
+
+/* เพิ่มสไตล์สำหรับเมนูด้านขวา */
+ion-menu.md ion-list#inbox-list ion-list-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
   
-  ion-menu.md ion-list-header,
-  ion-menu.md ion-note {
-    padding-left: 10px;
-  }
-  
-  ion-menu.md ion-list#inbox-list {
-    border-bottom: 1px solid var(--ion-background-color-step-150, #d7d8da);
-  }
-  
-  ion-menu.md ion-list#inbox-list ion-list-header {
-    font-size: 22px;
-    font-weight: 600;
-    min-height: 20px;
-    
-  }
-  
-  ion-menu.md ion-list#labels-list ion-list-header {
-    font-size: 16px;
-  
-    margin-bottom: 18px;
-  
-    color: #757575;
-  
-    min-height: 26px;
-  }
-  
-  ion-menu.md ion-item {
-    --padding-start: 10px;
-    --padding-end: 10px;
-    border-radius: 4px;
-  }
-  
-  ion-menu.md ion-item.selected {
-    --background: rgba(var(--ion-color-primary-rgb), 0.14);
-  }
-  
-  ion-menu.md ion-item.selected ion-icon {
-    color: var(--ion-color-primary);
-  }
-  
-  ion-menu.md ion-item ion-icon {
-    color: #616e7e;
-  }
-  
-  ion-menu.md ion-item ion-label {
-    font-weight: 500;
-  }
-  
-  
-  ion-menu.ios ion-note {
-    margin-bottom: 8px;
-  }
-  
-  ion-note {
-    display: inline-block;
-    font-size: 16px;
-  
-    color: var(--ion-color-medium-shade);
-  }
-  
-  ion-item.selected {
-    --color: var(--ion-color-primary);
-  }
+}
+
+/* เพิ่มการจัดเรียงเมนูให้เป็นแนวตั้ง */
+ion-item {
+  display: flex;
+  align-items: center;
+}
+
+ion-item img {
+  width: 30px; /* ขนาดไอคอน */
+  height: 30px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+

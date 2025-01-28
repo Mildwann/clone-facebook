@@ -8,13 +8,20 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   public appPages = [
-    { title: 'Profile', url: '/profile', icon: 'mail' },
-    { title: 'Friend', url: '/friend', icon: 'paper-plane' },
-    { title: 'Saved', url: '/folder/saved', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'เพื่อน', url: '/profile', Image: '/assets/friend.png' },
+    { title: 'ความทรงจำ', url: '/friend', Image: '/assets/memories.png' },
+    { title: 'ที่บันทึกไว้', url: '/folder/saved', Image: '/assets/saved.png' },
+    { title: 'กลุ่ม', url: '/folder/archived', Image: '/assets/groups.png' },
+    { title: 'วิดีโอ', url: '/folder/trash', Image: '/assets/videocolor.png' },
+    { title: 'Marketplace', url: '/folder/spam', Image: '/assets/social-media.png' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  public labels = [ 
+    { title: 'VALORANT Thailand Market【ซื้อขาย-แลกเปลี่ยน】', Image: '/assets/valomarket.jpg' },
+    { title: '47 Dota 2 Community', Image: '/assets/47.jpg' },
+    { title: 'Jobs for Thai Programmers', Image: '/assets/job.jpg' },
+    { title: 'Netflix/รีวิวหนัง/ซีรีส์', Image: '/assets/netflix.jpg' },
+    { title: 'VALORANT Thailand Community', Image: '/assets/valocommu.jpg' },
+    { title: 'Intern Jobs หางาน นักศึกษาฝึกงาน', Image: '/assets/intern.jpg' },
+  ];
   constructor() {}
 }

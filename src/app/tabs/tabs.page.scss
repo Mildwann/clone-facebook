@@ -1,42 +1,106 @@
 .facebook-tab-bar {
-    background-color: #ffffff; 
-    border-bottom: 1px solid #e0e0e0; 
-  }
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .facebook-tab-bar ion-tab-button {
-    position: relative; 
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
-    padding: 8px 0;
-    color: #888888;
-    transition: color 0.3s ease;
-  }
+.facebook-tab-bar ion-tab-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  color: #888888;
+  width: 9%;
 
-  .facebook-tab-bar ion-tab-button.ion-activated {
-    color: #1877f2;
-  }
+}
+ion-tab-bar img{
+  max-width: none;
+}
+.logo-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 16px;
+  width: 320px;
+}
 
-  .facebook-tab-bar ion-tab-button.ion-activated::after {
-    content: ""; 
-    position: absolute;
-    bottom: 0;
-    left: 50%; 
-    transform: translateX(-50%);
-    width: 40%; 
-    height: 3px;
-    background-color: #1877f2;
-    border-radius: 2px; 
-  }
+.facebook-logo {
+  width: 32px;
+  height: 32px;
+}
 
-  .tab-icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 4px; 
-    transition: transform 0.3s ease;
-  }
+.search-bar {
+  --background: #ebedf0;
+  --placeholder-color: #65686c;
+  --color: #333;
+  --border-radius: 30px;
+  --box-shadow: none;
+  font-size: 14px;
+}
 
-  .facebook-tab-bar ion-tab-button:hover .tab-icon {
-    transform: scale(1.1); 
+ion-searchbar {
+  text-align: start;
+}
+
+.tab-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 4px;
+  transition: transform 0.3s ease;
+}
+
+.facebook-tab-bar ion-tab-button:hover .tab-icon {
+  transform: scale(1.1);
+}
+
+.facebook-tab-bar .search-icon {
+  margin-right: 16px;
+}
+
+.search-button{
+  display: none;
+}
+.right-tabs {
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  width: 320px;
+}
+
+.right-tab-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.tap-flexx{
+  background-color: #ffffff;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin: 5%;
   }
+  
+  // @media screen and (max-width: 480px) {
+  //   .tap-flexx{
+  //     display: none;
+  //   }
+   
+  //     .search-bar {
+  //       display: none; /* ซ่อน ion-searchbar */
+  //     }
+    
+  //     .search-button {
+  //       display: block; /* แสดงปุ่มค้นหา */
+  //       background-color: #1877f2;
+  //       color: white;
+  //       border-radius: 20px;
+  //       padding: 8px 16px;
+  //       font-size: 14px;
+  //       text-align: center;
+  //     }
+  //   }
+  

@@ -17,7 +17,9 @@ const routes: Routes = [
   {
     path: 'saved',
     loadChildren: () => import('./pages/saved/saved.module').then( m => m.SavedPageModule)
-  }
+  },
+  
+
 ];
 @NgModule({
   imports: [
