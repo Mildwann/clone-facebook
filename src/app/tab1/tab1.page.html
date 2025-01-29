@@ -34,29 +34,36 @@
       <!-- -------------------------------------2-------------------------------------------- -->
       <app-explore-container id="main-content" name="Tab 1 page"></app-explore-container>
       <!-- -------------------------------------3--------------------------------------------- -->
-      <ion-menu contentId="main-content" type="overlay" menuId="right-menu" class="top-menu"side="end" >
+      <ion-menu contentId="main-content" type="overlay" menuId="right-menu" class="facebook-right-menu" side="end">
         <ion-content>
-          <ion-list id="inbox-list">
-            <ion-list-header>Inbox</ion-list-header>
-           
-  
-            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-                <img slot="start" [src]="p.Image"  >
-                <ion-label>{{ p.title }}</ion-label>
-              </ion-item>
-            </ion-menu-toggle>
+          <ion-list id="sponsored-list">
+            <ion-list-header class="right-header" >ได้รับการสนับสนุน</ion-list-header>
+            <ion-item *ngFor="let sponsor of sponsoredItems">
+              <img slot="start" [src]="sponsor.image" >
+              <ion-label>{{ sponsor.title }}</ion-label>
+            </ion-item>
           </ion-list>
+      
+          <ion-list id="friend-list">
+            <ion-list-header  class="right-header" >ผู้ติดต่อ</ion-list-header>
+            <ion-item *ngFor="let friend of onlineFriends">
+              <div class="friend-on">
+                <ion-avatar slot="start">
+                  <img  [src]="friend.image" >
+                </ion-avatar>
+                <ion-label>{{ friend.name }}</ion-label>
+                <ion-icon name="ellipse" class="online-status"></ion-icon>
+              </div>
+            </ion-item>
+          </ion-list>
+      
   
-          <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-  
-            @for (label of labels; track label) {
-              <ion-item lines="none">
-                <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-                <ion-label>{{ label }}</ion-label>
-              </ion-item>
-            }
+          <ion-list id="group-list">
+            <ion-list-header  class="right-header" >กลุ่มของคุณ</ion-list-header>
+            <ion-item *ngFor="let group of userGroups">
+              <img slot="start" [src]="group.image" class="group-icon">
+              <ion-label>{{ group.name }}</ion-label>
+            </ion-item>
           </ion-list>
         </ion-content>
       </ion-menu>

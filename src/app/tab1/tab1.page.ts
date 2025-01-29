@@ -34,6 +34,26 @@ export class Tab1Page {
     this.isTabletScreen = window.innerWidth > 480 && window.innerWidth <= 1024;
     this.isLargeScreen = window.innerWidth > 1024;
   }
+  sponsoredItems = [
+    { image: "/assets/adobe.png", title: "นักเรียนรับส่วนลด 65% " },
+    { image: "/assets/noc.png", title: "สินค้าจำนวนจำกัด" }
+  ];
 
+  onlineFriends = [
+    { image: "/assets/gbang.jpg", name: "รูปหล่อ แต่ธรรมดา" },
+    { image: "/assets/employee.jpg", name: "taloy swift" },
+    { image: "/assets/bang2.jpg", name: "sompana rumor" },
+    { image: "/assets/arai.jpg", name: "araina wahag" },
+    { image: "/assets/rose.jpg", name: "rosaroy rose" },
+    { image: "/assets/mirror.jpg", name: "american girls" },
+    { image: "/assets/cutie.jpg", name: "เจ้าหญิงออโรร่า" },
+
+    
+  ];
+
+  userGroups = [
+    { image: "/assets/chatgroup.jpg", name: "valo 24 hours" },
+    { image: "/assets/cartoon.jpg", name: "cartoon club" }
+  ];
   
 }
