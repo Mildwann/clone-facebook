@@ -104,4 +104,17 @@ ion-searchbar {
         background-color: #ffffff;
       }
     }
+    @media screen and (max-width: 1219px) {
+        .search-bar {
+          display: none; /* ซ่อน ion-searchbar */
+        }
   
+        .search-button {
+          display: block; /* แสดงปุ่มค้นหา */
+          color: white;
+          border-radius: 20px;
+          font-size: 14px;
+          text-align: center;
+        }
+       
+      }

@@ -346,13 +346,7 @@ ion-content {
   #container {
     margin: 5% 2%; /* ปรับ margin สำหรับมือถือ */
   }
-  .input-think {
-    --border-radius: 50px;
-    --background: #edeef0; /* สีพื้นหลัง */
-    --placeholder-color: #65686c; /* สีของ placeholder */
-    --padding-start: 16px; /* ระยะห่างภายในด้านซ้าย */
-    --padding-end: 16px; /* ระยะห่างภายในด้านขวา */
-  }
+
   .wrapper {
    margin-top: 0px;
   }
@@ -361,3 +355,19 @@ ion-content {
     margin-bottom: 14px;
   }
 }
+
+@media screen and (max-width: 1389px){
+  .feature-item.ion-hide-sm-down{
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1205px) {
+  #container{
+    margin: 1% 2%;
+  }
+  .feature-item.ion-hide-sm-down{
+    display: flex !important;
+    
+  }
+}
+

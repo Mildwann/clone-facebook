@@ -24,14 +24,16 @@ export class Tab1Page {
     { title: 'VALORANT Thailand Community', Image: '/assets/valocommu.jpg' },
     { title: 'Intern Jobs หางาน นักศึกษาฝึกงาน', Image: '/assets/intern.jpg' },
   ];
-  isSmallScreen: boolean = window.innerWidth <= 480; // ตรวจสอบหน้าจอเริ่มต้น
+  isSmallScreen = window.innerWidth <= 480; // สำหรับ Mobile
+  isTabletScreen = window.innerWidth > 480 && window.innerWidth <= 1024; // สำหรับ Tablet
+  isLargeScreen = window.innerWidth > 1024; // สำหรับ Desktop
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isSmallScreen = event.target.innerWidth <= 480; // อัปเดตสถานะเมื่อหน้าจอเปลี่ยนขนาด
+    this.isSmallScreen = window.innerWidth <= 480;
+    this.isTabletScreen = window.innerWidth > 480 && window.innerWidth <= 1024;
+    this.isLargeScreen = window.innerWidth > 1024;
   }
-
-  constructor() {}
 
   
 }

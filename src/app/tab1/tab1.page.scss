@@ -118,3 +118,10 @@ ion-item img {
   object-fit: cover;
   margin-right: 10px;
 }
+@media screen and (max-width: 1205px) {
+  ion-menu[menuId="main-menu"] {
+    display: none !important;
+  }
+  
+}
+
