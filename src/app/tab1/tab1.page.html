@@ -1,5 +1,5 @@
-
-<ion-content [fullscreen]="true">
+<!-- ----------------------------------------------ส่วนหน้าเว็บปกติ---------------------------------------- -->
+<ion-content *ngIf="!isSmallScreen" [fullscreen]="true">
 
     <ion-split-pane contentId="main-content">
       <!-- ------------------------------------------1-------------------------------------------- -->
@@ -61,6 +61,8 @@
         </ion-content>
       </ion-menu>
     </ion-split-pane>
-  
-  
+</ion-content>
+<!-- ---------------------------------------ส่วนหน้าจอเล็ก 480------------------------------------ -->
+<ion-content *ngIf="isSmallScreen">
+  <app-explore-container></app-explore-container>
 </ion-content>

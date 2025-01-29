@@ -84,23 +84,24 @@ ion-searchbar {
   margin: 5%;
   }
   
-  // @media screen and (max-width: 480px) {
-  //   .tap-flexx{
-  //     display: none;
-  //   }
+  @media screen and (max-width: 480px) {
+    .tap-flexx{
+      display: none;
+    }
    
-  //     .search-bar {
-  //       display: none; /* ซ่อน ion-searchbar */
-  //     }
-    
-  //     .search-button {
-  //       display: block; /* แสดงปุ่มค้นหา */
-  //       background-color: #1877f2;
-  //       color: white;
-  //       border-radius: 20px;
-  //       padding: 8px 16px;
-  //       font-size: 14px;
-  //       text-align: center;
-  //     }
-  //   }
+      .search-bar {
+        display: none; /* ซ่อน ion-searchbar */
+      }
+
+      .search-button {
+        display: block; /* แสดงปุ่มค้นหา */
+        color: white;
+        border-radius: 20px;
+        font-size: 14px;
+        text-align: center;
+      }
+      .right-tabs {
+        background-color: #ffffff;
+      }
+    }
   

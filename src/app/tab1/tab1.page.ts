@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: false,
+  
 })
 export class Tab1Page {
   public appPages = [
@@ -23,5 +24,14 @@ export class Tab1Page {
     { title: 'VALORANT Thailand Community', Image: '/assets/valocommu.jpg' },
     { title: 'Intern Jobs หางาน นักศึกษาฝึกงาน', Image: '/assets/intern.jpg' },
   ];
+  isSmallScreen: boolean = window.innerWidth <= 480; // ตรวจสอบหน้าจอเริ่มต้น
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isSmallScreen = event.target.innerWidth <= 480; // อัปเดตสถานะเมื่อหน้าจอเปลี่ยนขนาด
+  }
+
   constructor() {}
+
+  
 }

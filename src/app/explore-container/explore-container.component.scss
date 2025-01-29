@@ -8,6 +8,7 @@
 }
 ion-content {
   --background: #f8f9fb; /* ตั้งค่าสีพื้นหลัง */
+  background: #f8f9fb
 }
 
 #container{
@@ -20,36 +21,17 @@ ion-card{
   }
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+
 
 /* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 768px (แท็บเล็ต/หน้าจอเล็ก) */
 @media (max-width: 768px) {
   #container {
     margin: 2% 8%; /* ปรับ margin สำหรับหน้าจอเล็ก */
   }
-
-  #container strong {
-    font-size: 1.5rem; /* ปรับขนาดตัวอักษรให้เล็กลงในหน้าจอเล็ก */
-  }
-}
-
-/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 480px (มือถือ) */
-@media (max-width: 480px) {
-  #container {
-    margin: 5% 2%; /* ปรับ margin สำหรับมือถือ */
-  }
-
-  #container strong {
-    font-size: 1.2rem; /* ปรับขนาดตัวอักษรให้เล็กลงในมือถือ */
-  }
 }
 .account{
   display: flex;
   align-items: center;
-  
   padding-bottom: 22px; /* ระยะห่างสำหรับ border */
   border-bottom: 1px solid var(--ion-background-color-step-150, #d7d5d5);
 }
@@ -69,7 +51,6 @@ ion-card{
   margin-top: 12px; /* ระยะห่างด้านบน */
  
 }
-
 
 // --------------------------------------story-------------------------------------------
 
@@ -95,11 +76,6 @@ ion-card {
   margin-bottom: 20px; /* ให้ margin ล่างเพื่อแยกออกจากกัน */
 }
 
-/* ทำให้ข้อความ strong ปรับขนาดได้ตามหน้าจอ */
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
 
 /* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 768px (แท็บเล็ต/หน้าจอเล็ก) */
 @media (max-width: 768px) {
@@ -107,19 +83,12 @@ ion-card {
     margin: 2% 8%; /* ลด margin สำหรับหน้าจอเล็ก */
   }
 
-  #container strong {
-    font-size: 1.5rem; /* ลดขนาดตัวอักษร */
-  }
 }
 
 /* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 480px (มือถือ) */
 @media (max-width: 480px) {
   #container {
-    margin: 5% 2%; /* ลด margin สำหรับมือถือ */
-  }
-
-  #container strong {
-    font-size: 1.2rem; /* ลดขนาดตัวอักษรในมือถือ */
+    margin: 5% 0; /* ลด margin สำหรับมือถือ */
   }
 }
 .feature {
@@ -358,5 +327,37 @@ ion-content {
   &::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .iconfb {
+    width: 40px; 
+    height: 40px;
+    cursor: pointer; 
+    transition: transform 0.2s;
+  }
+  .icon-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555; 
+    text-align: center;
+  }
+  #container {
+    margin: 5% 2%; /* ปรับ margin สำหรับมือถือ */
+  }
+  .input-think {
+    --border-radius: 50px;
+    --background: #edeef0; /* สีพื้นหลัง */
+    --placeholder-color: #65686c; /* สีของ placeholder */
+    --padding-start: 16px; /* ระยะห่างภายในด้านซ้าย */
+    --padding-end: 16px; /* ระยะห่างภายในด้านขวา */
+  }
+  .wrapper {
+   margin-top: 0px;
+  }
+  ion-card{
+    margin: 0px;
+    margin-bottom: 14px;
   }
 }
